@@ -1,6 +1,7 @@
 import { useUserStore } from "@/store/user"
 import { Button } from "antd"
 import { useEffect } from "react"
+import FMStatistics from "@/components/FMStatistics"
 
 export default () => {
   const { userName, userEmail, setUserInfo } = useUserStore((state) => ({
@@ -19,12 +20,11 @@ export default () => {
   useEffect(()=>{
     console.log(userName, userEmail)
   }, [userName])
-  return (<>
-    <p>page 1</p>
-    <p>name: {userName}</p>
-    <p>email: {userEmail}</p>
-    <Button onClick={changeUser}>
-      Change
-    </Button>
-  </>)
+  return (
+    <>
+      <div style={{padding: 20}}>
+        <FMStatistics></FMStatistics>
+      </div>
+    </>
+  )
 }

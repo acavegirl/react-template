@@ -1,21 +1,17 @@
-import { AppstoreOutlined } from '@ant-design/icons';
+import { AppstoreOutlined, PieChartOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 
 type MenuItem = Required<MenuProps>['items'][number];
 
 export const menuData: MenuItem[] = [
   {
-    key: 'api',
-    label: '页面一',
-    icon: <AppstoreOutlined />,
-    children: [
-      { key: 'page1', label: '页面一' },
-    ],
+    key: 'statistics',
+    label: '后台统计',
+    icon: <PieChartOutlined />,
   },
   {
-    key: 'page2',
-    label: '页面二',
+    key: 'fm',
+    label: '数据管理',
     icon: <AppstoreOutlined />,
   },
-  
 ];

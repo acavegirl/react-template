@@ -1,33 +1,26 @@
-import React from 'react';
 import { createBrowserRouter } from "react-router-dom";
-import Page1 from '@/pages/Page1'
-import Page2 from '@/pages/Page2'
-
-const BasicLayout = React.lazy(() => import('@/components/Layout/BasicLayout'))
+import Statistics from '@/pages/Statistics'
+import FM from '@/pages/FM'
+import TopLayout from '@/components/Layout/TopLayout'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <BasicLayout />,
+    element: <TopLayout />,
     children: [
       {
-        element: <Page1 />,
+        element: <FM />,
         index: true,
       },
       {
-        path: 'api',
-        children: [
-          {
-            path: 'page1',
-            element: <Page1 />
-          },
-        ],
+        path: 'statistics',
+        element: <Statistics />
       },
       {
-        path: 'page2',
-        element: <Page2 />,
+        path: 'fm',
+        element: <FM />,
       }
     ]
   }
-])
+], { basename: "/file_manager" })
 export default router
